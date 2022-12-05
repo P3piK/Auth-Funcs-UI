@@ -1,0 +1,55 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+    gap: 1rem;
+}
+
+.control {
+    width: 10rem;
+}
+
+.login {
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.status {
+    margin-top: 0.5rem;
+}
+
+.role {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgb(183, 182, 182);
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+
+.expanded {
+    
+}
+
+.action button {
+    background-color: rgb(228, 228, 228);
+    border-radius: 8px;
+    width: 5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    border: 1px solid grey;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.action button:hover {
+    background-color: rgb(200, 199, 199);
+}

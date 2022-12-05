@@ -1,0 +1,20 @@
+.action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action button {
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: rgb(134, 134, 134);
+    background-color: rgb(247, 250, 253);
+    transition: 0.2s ease;
+}
+
+.action button:hover {
+    background-color: rgba(150, 148, 148, 0.389);
+}
