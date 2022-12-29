@@ -1,0 +1,27 @@
+.account {
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border: 1px solid lightgrey;
+    background-color: rgb(237, 237, 237);
+    margin-right: 1rem;
+    font-weight: bold;
+    color: grey;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.circle-button:hover {
+    background-color: lightgray;
+}

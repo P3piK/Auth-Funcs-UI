@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import AccountList from "./components/Account/AccountList";
+import Account from "./components/Account/Account";
 import styles from "./App.module.css"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <main>
-        <AccountList />
+        <Account />
       </main>
     </>
   );

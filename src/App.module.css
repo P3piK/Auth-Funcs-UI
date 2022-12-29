@@ -4,3 +4,8 @@ main {
   margin: 0 auto;
   padding: 0;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}

@@ -15,12 +15,19 @@ function useHttp() {
         body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
         headers: requestConfig.headers ? requestConfig.headers : {},
       });
-      console.log(response);
-      const responseJson = await response.json();
 
-      applyData(responseJson);
+      if (response.ok) {
+        const responseJson = await response.json();
+        console.log("response: " + responseJson);
+        applyData(responseJson);
+      } else {
+        const text = await response.text();
+        const textJson = JSON.parse(text);
+        console.log("not ok: " + textJson.title);
+        setError(textJson.title);
+      }
     } catch (ex) {
-      console.log(ex);
+      console.log("Exception: " + ex.Message);
       setError(ex.Message);
     }
 

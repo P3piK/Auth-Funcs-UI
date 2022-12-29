@@ -1,55 +1,98 @@
 .item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid lightgray;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+  gap: 1rem;
 }
 
 .control {
-    width: 10rem;
+  width: 10rem;
 }
 
 .login {
-    
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .status {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .role {
-    margin: 0;
-    font-size: 0.85rem;
-    color: rgb(183, 182, 182);
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgb(183, 182, 182);
 }
 
-.action {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.5s;
+.dropdown {
+  position: relative;
+  background-color: rgba(228, 228, 228, 0.4);
+  border-radius: 8px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  cursor: pointer;
+  text-align: center;
 }
 
-.expanded {
-    
+.dropdown-menu {
+  transform: scaleY(0);
+  position: absolute;
+  left: 0;
+  perspective: 1000px;
+  top: 100%;
+  transform-origin: top center;
+  overflow: hidden;
+  transition: 0.3s ease all;
 }
 
-.action button {
-    background-color: rgb(228, 228, 228);
-    border-radius: 8px;
-    width: 5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-    border: 1px solid grey;
-    transition: 0.2s ease;
-    cursor: pointer;
+.dropdown-active .dropdown-menu {
+  transform: scaleY(1);
 }
 
-.action button:hover {
-    background-color: rgb(200, 199, 199);
+.dropdown-menu li {
+  display: block;
+  background-color: rgb(242, 241, 241);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  border: 1px solid grey;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropdown-menu li:hover {
+  background-color: rgb(200, 199, 199);
+}
+
+.dropdown-menu span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-menu p {
+  margin: 0;
+}
+
+.dropdown-icon {
+  font-size: 0.8rem;
+  transition: 0.2s ease all;
+}
+
+.dropdown-active .dropdown-icon {
+  transform: rotateZ(-90deg);
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }

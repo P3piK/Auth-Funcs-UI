@@ -1,0 +1,18 @@
+label {
+    color: black;
+}
+
+.invalid label {
+    color: red;
+}
+
+.invalid input {
+    background-color: rgba(255, 0, 0, 0.159);
+    border-color: rgba(255, 0, 0, 0.389);
+}
+
+.invalid p {
+    margin: 0;
+    color: red;
+    font-size: 0.8em;
+}

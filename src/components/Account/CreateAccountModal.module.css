@@ -1,0 +1,60 @@
+.create-account {
+  width: 80vw;
+  max-width: 35rem;
+  background-color: white;
+  margin: auto;
+}
+
+form {
+  padding: 1rem 2rem;
+}
+
+.control {
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.action button {
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit {
+  background-color: white;
+}
+
+.submit:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+.cancel {
+  background-color: rgb(238, 238, 238);
+}
+
+.cancel:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+
+.invalid-message {
+  color: red;
+}
+
+@media screen and (max-width: 510px) {
+  .create-account {
+    width: 95vw;
+  }
+}

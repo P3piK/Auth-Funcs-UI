@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2a2ff8e3-a053-40c0-b64d-bebd8fa8df38/AppServices/subscriptions/2a2ff8e3-a053-40c0-b64d-bebd8fa8df38/resourceGroups/AuthFuncsResources/providers/Microsoft.Web/sites/AuthFuncs",
+    "appService.deploySubpath": "."
+}
