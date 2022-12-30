@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
 import Account from "./components/Account/Account";
-import styles from "./App.module.css"
+import "./App.module.css"
 
 function App() {
   return (
