@@ -3,23 +3,38 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import React, { useState } from "react";
 import styles from "./AccountItem.module.css";
+import DeleteAccountModal from "./DeleteAccountModal";
+import EditAccountModal from "./EditAccountModal";
 
 function AccountItem(props) {
   const { item } = props;
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  const editHandler = () => setShowEditModal(true);
+  const deleteHandler = () => setShowDeleteModal(true);
+
+  const exitModalHandler = () => {
+    setShowEditModal(false);
+    setShowDeleteModal(false);
+  }
   return (
-    <li className={styles.item}>
-      <div className={styles.control}>
-        <p className={styles.login}>{item.login}</p>
-        <p className={styles.role}>{item.role}</p>
-        <p className={styles.status}>{item.status}</p>
-      </div>
-      <AccountDropdown />
-    </li>
+    <>
+      {showEditModal && <EditAccountModal onExit={exitModalHandler} />}
+      {showDeleteModal && <DeleteAccountModal onExit={exitModalHandler} />}
+      <li className={styles.item}>
+        <div className={styles.control}>
+          <p className={styles.login}>{item.login}</p>
+          <p className={styles.role}>{item.role}</p>
+          <p className={styles.status}>{item.status}</p>
+        </div>
+        <AccountDropdown onEdit={editHandler} onDelete={deleteHandler} />
+      </li>
+    </>
   );
 }
 
-function AccountDropdown() {
+function AccountDropdown(props) {
   const [isClicked, setIsClicked] = useState(false);
 
   const activateDropdownHandler = () => {
@@ -29,11 +44,11 @@ function AccountDropdown() {
   };
 
   const editHandler = () => {
-    console.log("edit");
+    props.onEdit();
   };
 
   const deleteHandler = () => {
-    console.log("delete");
+    props.onDelete();
   };
 
   return (
