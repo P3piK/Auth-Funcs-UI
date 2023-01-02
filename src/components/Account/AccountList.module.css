@@ -4,16 +4,9 @@
 }
 
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    display: grid;
+    grid-gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     list-style: none;
     padding: 0;
-}
-
-@media screen and (max-width: 510px) {
-    .list {
-        justify-content: center;
-    }
 }

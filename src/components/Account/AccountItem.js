@@ -6,6 +6,20 @@ import styles from "./AccountItem.module.css";
 
 function AccountItem(props) {
   const { item } = props;
+
+  return (
+    <li className={styles.item}>
+      <div className={styles.control}>
+        <p className={styles.login}>{item.login}</p>
+        <p className={styles.role}>{item.role}</p>
+        <p className={styles.status}>{item.status}</p>
+      </div>
+      <AccountDropdown />
+    </li>
+  );
+}
+
+function AccountDropdown() {
   const [isClicked, setIsClicked] = useState(false);
 
   const activateDropdownHandler = () => {
@@ -23,38 +37,33 @@ function AccountItem(props) {
   };
 
   return (
-    <li className={styles.item}>
-      <div className={styles.control}>
-        <p className={styles.login}>{item.login}</p>
-        <p className={styles.role}>{item.role}</p>
-        <p className={styles.status}>{item.status}</p>
-      </div>
+    <div
+      className={`${styles.dropdown} ${isClicked && styles["dropdown-active"]}`}
+    >
       <div
-        className={`${styles.dropdown} ${
-          isClicked && styles["dropdown-active"]
-        }`}
+        className={styles["dropdown-header"]}
+        onClick={activateDropdownHandler}
       >
         <FontAwesomeIcon
           icon={faChevronLeft}
           className={styles["dropdown-icon"]}
-          onClick={activateDropdownHandler}
         />
-        <ul className={styles["dropdown-menu"]}>
-          <li onClick={editHandler}>
-            <span>
-              <FontAwesomeIcon icon={faPenToSquare} />
-              <p>Edit</p>
-            </span>
-          </li>
-          <li onClick={deleteHandler}>
-            <span>
-              <FontAwesomeIcon icon={faTrashCan} />
-              <p>Delete</p>
-            </span>
-          </li>
-        </ul>
       </div>
-    </li>
+      <ul className={styles["dropdown-menu"]}>
+        <li onClick={editHandler}>
+          <span>
+            <FontAwesomeIcon icon={faPenToSquare} />
+            <p>Edit</p>
+          </span>
+        </li>
+        <li onClick={deleteHandler}>
+          <span>
+            <FontAwesomeIcon icon={faTrashCan} />
+            <p>Delete</p>
+          </span>
+        </li>
+      </ul>
+    </div>
   );
 }
 

@@ -7,7 +7,8 @@
 }
 
 .control {
-  width: 10rem;
+  min-width: 10rem;
+  max-width: 15rem;
 }
 
 .login {
@@ -30,13 +31,17 @@
 
 .dropdown {
   position: relative;
-  background-color: rgba(228, 228, 228, 0.4);
-  border-radius: 8px;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.dropdown-header {
+  background-color: rgba(228, 228, 228, 0.4);
   border: 1px solid rgba(128, 128, 128, 0.301);
+  border-radius: 8px;
   cursor: pointer;
   text-align: center;
+  height: 100%;
 }
 
 .dropdown-menu {
