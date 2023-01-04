@@ -20,7 +20,7 @@ function AccountItem(props) {
   }
   return (
     <>
-      {showEditModal && <EditAccountModal onExit={exitModalHandler} />}
+      {showEditModal && <EditAccountModal item={item} onExit={exitModalHandler} />}
       {showDeleteModal && <DeleteAccountModal onExit={exitModalHandler} />}
       <li className={styles.item}>
         <div className={styles.control}>

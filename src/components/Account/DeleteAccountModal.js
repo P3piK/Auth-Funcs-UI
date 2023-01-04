@@ -6,7 +6,7 @@ function DeleteAccountModal(props) {
   return (
     <Modal onExit={props.onExit}>
       <Card>
-        <p>You're not authorised to do this.</p>
+        <p>Not authorised.</p>
         <button onClick={props.onExit}>Cancel</button>
       </Card>
     </Modal>

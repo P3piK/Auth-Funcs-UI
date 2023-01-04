@@ -1,0 +1,13 @@
+.edit-card {
+  width: 80vw;
+  max-width: 35rem;
+  background-color: white;
+  margin: auto;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}

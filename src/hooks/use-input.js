@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useInput = (validateFn) => {
-  const [value, setValue] = useState("");
+const useInput = (validateFn, defaultValue = "") => {
+  const [value, setValue] = useState(defaultValue);
   const [isValid, setIsValid] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
 
